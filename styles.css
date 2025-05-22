@@ -188,7 +188,7 @@ p.lead {
 }
 
 .footer {
-    margin-top: 1.5rem;
+    margin-top: 0.75rem;
     background: var(--footer-bg);
     color: var(--text-muted);
     padding: 2rem 0;
