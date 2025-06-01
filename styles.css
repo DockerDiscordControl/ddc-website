@@ -741,7 +741,21 @@ p.lead {
         width: 100%;
     }
     
-    .donation-section-hero .donation-link img,
+    /* Buy Me A Coffee Button - behält originale Größe */
+    .donation-section-hero .donation-link {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .donation-section-hero .donation-link img {
+        height: 45px !important;
+        width: auto !important;
+        max-width: 100%;
+    }
+    
+    /* PayPal Button - behält blaue Farbe und korrekte Größe */
     .donation-section-hero .donation-btn {
         width: 100% !important;
         height: 45px !important;
@@ -752,11 +766,22 @@ p.lead {
         padding: 8px 12px !important;
         line-height: 1.2 !important;
         white-space: nowrap !important;
+        background-color: #0070ba !important;
+        border-color: #0070ba !important;
+        color: white !important;
+        text-decoration: none !important;
+    }
+    
+    .donation-section-hero .donation-btn:hover {
+        background-color: #005a94 !important;
+        border-color: #005a94 !important;
+        color: white !important;
     }
     
     .donation-section-hero .donation-btn i {
         margin-right: 0.5rem !important;
         font-size: 1rem !important;
+        color: white !important;
     }
 
     .btn {
