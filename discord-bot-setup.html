@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Complete step-by-step guide to create and configure your Discord Bot for DockerDiscordControl (DDC)">
+    <meta name="keywords" content="discord bot setup, docker discord control, ddc bot guide, discord developer portal">
+    <title>Discord Bot Setup Guide - DockerDiscordControl (DDC)</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="favicon.png" alt="DDC Logo" width="30" height="30" class="me-2">
+                <span class="brand-text-nav">DDC</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/DockerDiscordControl/DockerDiscordControl" target="_blank">
+                            <i class="bi bi-github me-1"></i>GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-4">
+        <!-- Logo Header -->
+        <div class="text-center logo-header mb-5">
+            <img src="ddc_web.png" alt="DDC Logo" class="setup-logo mb-3">
+            <div class="ddc-title">
+                <span class="neon-text-large" id="neon-ddc">DDC</span>
+            </div>
+        </div>
+        
+        <h2 class="text-center mb-4">DockerDiscordControl Bot Setup Guide</h2>
+        <p class="text-center mb-5">Complete step-by-step instructions to create and configure your Discord Bot</p>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Info Alert -->
+                <div class="alert alert-info" role="alert">
+                    <h4 class="alert-heading">Before You Begin</h4>
+                    <p>This guide will help you set up the Discord Bot portion of DockerDiscordControl. You'll need:</p>
+                    <ul>
+                        <li>A Discord account</li>
+                        <li>Administrator permissions on the Discord server where you want to use the bot</li>
+                    </ul>
+                    <hr>
+                    <p class="mb-0">After completing this guide, you'll need to save the <strong>Bot Token</strong> and <strong>Server (Guild) ID</strong> in your DDC configuration.</p>
+                    <p class="small mt-2">
+                        <i class="bi bi-globe"></i> Learn more at <a href="https://ddc.bot" target="_blank">https://ddc.bot</a>
+                    </p>
+                </div>
+
+                <!-- Setup Guide Card -->
+                <div class="card bg-dark text-white mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">
+                            <i class="bi bi-discord me-2"></i>Creating Your Discord Bot
+                        </h3>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">1.</span>Access Discord Developer Portal</h4>
+                            <p>Go to the <a href="https://discord.com/developers/applications" target="_blank" class="text-info">Discord Developer Portal</a> and log in with your Discord account.</p>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">2.</span>Create a New Application</h4>
+                            <p>Click the "New Application" button in the top-right corner.</p>
+                            <p>Enter a name for your application (e.g., "DockerControl") and click "Create".</p>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">3.</span>Set Up Bot Profile</h4>
+                            <p>From the left sidebar, click on the "Bot" tab.</p>
+                            <p>Here you can customize your bot's username and avatar if desired.</p>
+                            <p>Toggle "Public Bot" ON if you want others to be able to invite your bot (recommended OFF for private use).</p>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">4.</span>Enable Required Privileged Intents</h4>
+                            <p class="warning-text">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                <strong>CRITICAL STEP:</strong> You MUST enable all three "Privileged Gateway Intents":
+                            </p>
+                            <ul>
+                                <li>Presence Intent</li>
+                                <li>Server Members Intent</li>
+                                <li>Message Content Intent</li>
+                            </ul>
+                            <p>Without these intents, your bot will fail to start with an error about missing intents.</p>
+                            <div class="text-center mt-3 mb-3">
+                                <div class="border border-info rounded p-3 text-info">
+                                    <i class="bi bi-info-circle-fill me-2"></i>
+                                    <strong>Where to find them:</strong> In the Discord Developer Portal, go to the Bot tab. Scroll down to "Privileged Gateway Intents" section and ensure all three toggles are turned ON (they should appear blue when enabled).
+                                </div>
+                                <div class="mt-2">
+                                    <a href="https://discord.com/developers/docs/topics/gateway#privileged-intents" target="_blank" class="btn btn-sm btn-outline-info">
+                                        <i class="bi bi-book me-1"></i>Official Discord Documentation on Privileged Intents
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">5.</span>Generate and Copy Bot Token</h4>
+                            <p>In the Bot tab, click "Reset Token" to generate a new token, then click "Copy" to copy it.</p>
+                            <p class="warning-text">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                <strong>SECURITY WARNING:</strong> This token gives complete access to your bot. Never share it publicly or commit it to version control.
+                            </p>
+                            <p>Store this token safely - you'll need to paste it into the DDC configuration later.</p>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h3 class="card-title mb-4">
+                            <i class="bi bi-server me-2"></i>Inviting Your Bot to Your Server
+                        </h3>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">1.</span>Create Invite URL</h4>
+                            <p>From the left sidebar, click on "OAuth2" then "URL Generator".</p>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">2.</span>Select Required Scopes</h4>
+                            <p>Under "Scopes", check the following boxes:</p>
+                            <ul>
+                                <li>bot</li>
+                                <li>applications.commands</li>
+                            </ul>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">3.</span>Select Bot Permissions</h4>
+                            <p>Under "Bot Permissions", select the following permissions:</p>
+                            <ul>
+                                <li>View Channels</li>
+                                <li>Send Messages</li>
+                                <li>Embed Links</li>
+                                <li>Attach Files</li>
+                                <li>Read Message History</li>
+                                <li>Use Slash Commands</li>
+                                <li>Manage Messages (for editing status messages)</li>
+                            </ul>
+                            <p>Alternatively, you can give the bot "Administrator" permission, but this is generally not recommended for security reasons.</p>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">4.</span>Add Bot to Your Server</h4>
+                            <p>Copy the generated URL at the bottom of the page.</p>
+                            <p>Paste the URL into your browser's address bar and press Enter.</p>
+                            <p>Select the server where you want to add the bot, then click "Authorize".</p>
+                            <p>Complete the CAPTCHA verification if prompted.</p>
+                        </div>
+
+                        <div class="alert alert-warning mt-3 mb-3">
+                            <h5><i class="bi bi-info-circle me-2"></i>Important Note About Slash Commands</h5>
+                            <p>After adding your bot to the server, slash commands may not be immediately available. Discord can take up to one hour to fully register all commands across their network. If commands don't appear right away, please be patient.</p>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h3 class="card-title mb-4">
+                            <i class="bi bi-hash me-2"></i>Getting Your Server (Guild) ID
+                        </h3>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">1.</span>Enable Developer Mode in Discord</h4>
+                            <p>Open Discord and go to User Settings (the gear icon near your username).</p>
+                            <p>Navigate to "Advanced" and enable "Developer Mode".</p>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">2.</span>Copy Server ID</h4>
+                            <p>Right-click on your server's icon in the server list.</p>
+                            <p>Select "Copy ID" from the context menu.</p>
+                            <p>This is your Server (Guild) ID that you'll need for DDC configuration.</p>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h3 class="card-title mb-4">
+                            <i class="bi bi-gear-fill me-2"></i>Configuring DDC with Bot Details
+                        </h3>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">1.</span>Enter Bot Token</h4>
+                            <p>Access your DockerDiscordControl configuration page (usually at <code>http://your-server:8374</code>).</p>
+                            <p>Paste your Bot Token into the "Bot Token" field.</p>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">2.</span>Enter Guild ID</h4>
+                            <p>Paste your Server (Guild) ID into the "Guild ID" field.</p>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">3.</span>Configure Channel Permissions</h4>
+                            <p>Set up channel permissions to determine which Discord channels can be used for control and status messages.</p>
+                            <p>For each channel, you'll need to add its ID and configure appropriate permissions.</p>
+                        </div>
+
+                        <div class="step-description">
+                            <h4><span class="step-number">4.</span>Save Changes</h4>
+                            <p>Click "Save Configuration" to apply your changes.</p>
+                            <p>Restart the Docker container for the changes to take effect.</p>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <a href="index.html" class="btn btn-primary me-3">
+                                <i class="bi bi-arrow-left me-2"></i>Back to DDC Homepage
+                            </a>
+                            <a href="https://github.com/DockerDiscordControl/DockerDiscordControl#installation" class="btn btn-outline-info" target="_blank">
+                                <i class="bi bi-book me-2"></i>Installation Guide
+                            </a>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <p class="small text-muted">
+                                For additional help and resources, visit <a href="https://ddc.bot" target="_blank" class="text-info">https://ddc.bot</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Section -->
+                <div class="card bg-secondary text-white mb-4">
+                    <div class="card-body text-center">
+                        <h4><i class="bi bi-question-circle me-2"></i>Need Help?</h4>
+                        <p>If you encounter any issues during the setup process, check out these resources:</p>
+                        <div class="d-flex justify-content-center flex-wrap gap-2">
+                            <a href="https://github.com/DockerDiscordControl/DockerDiscordControl/issues" class="btn btn-outline-light btn-sm" target="_blank">
+                                <i class="bi bi-bug me-1"></i>Report Issues
+                            </a>
+                            <a href="https://github.com/DockerDiscordControl/DockerDiscordControl/wiki" class="btn btn-outline-light btn-sm" target="_blank">
+                                <i class="bi bi-book me-1"></i>Documentation
+                            </a>
+                            <a href="https://discord.com/developers/docs" class="btn btn-outline-light btn-sm" target="_blank">
+                                <i class="bi bi-discord me-1"></i>Discord API Docs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="footer-section">
+                            <h5>DockerDiscordControl</h5>
+                            <p>&copy; 2025 DockerDiscordControl Project</p>
+                            <div class="footer-links">
+                                <a href="https://github.com/DockerDiscordControl/DockerDiscordControl" class="footer-link me-3">
+                                    <i class="bi bi-github me-1"></i>GitHub
+                                </a>
+                                <a href="index.html" class="footer-link">
+                                    <i class="bi bi-house-door me-1"></i>Homepage
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="footer-section">
+                            <h5>Support</h5>
+                            <div class="impressum-content">
+                                <p class="mb-2">
+                                    <strong>Documentation:</strong><br>
+                                    <a href="https://github.com/DockerDiscordControl/DockerDiscordControl/wiki" class="footer-link">
+                                        <i class="bi bi-book me-1"></i>Wiki & Guides
+                                    </a>
+                                </p>
+                                <p class="mb-0">
+                                    <strong>Community:</strong><br>
+                                    <a href="https://github.com/DockerDiscordControl/DockerDiscordControl/issues" class="footer-link">
+                                        <i class="bi bi-question-circle me-1"></i>Get Help
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <p class="mb-0 small">
+                                Open-source project under MIT License. 
+                                For support, please use <a href="https://github.com/DockerDiscordControl/DockerDiscordControl/issues" class="footer-link">GitHub Issues</a>.
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <p class="mb-0 small text-muted">
+                                Made with ❤️ for the Docker community
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed-credit">
+        <div class="credit-content">
+            Built by <span class="neon-max" id="neon-max">MAX</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
