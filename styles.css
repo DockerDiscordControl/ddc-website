@@ -816,30 +816,24 @@ p.lead {
 }
 
 .platform-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
     margin-bottom: 2rem;
     min-height: 80px;
-    align-items: flex-start;
     flex: 1;
-    justify-content: space-between;
+    display: flex;
+    align-items: center;
 }
 
-.feature-tag {
-    background: rgba(54, 207, 255, 0.1);
+.feature-list {
+    width: 100%;
+    text-align: left;
+}
+
+.feature-item {
     color: var(--primary-color);
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    border: 1px solid rgba(54, 207, 255, 0.2);
-    white-space: nowrap;
-    flex: 1;
-    text-align: center;
-    display: inline-block;
-    max-width: 120px;
-    min-width: 90px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
 }
 
 .btn-platform-primary {
@@ -906,6 +900,11 @@ p.lead {
     
     .platform-features {
         min-height: 70px;
+    }
+
+    .feature-item {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
     }
     
     .platform-note {
