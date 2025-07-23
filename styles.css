@@ -2638,3 +2638,24 @@ code {
         height: 5px;
     }
 }
+
+/* Footer Link Abstände fixen */
+.footer-links {
+    gap: 0; /* entfernt automatischen Zwischenraum */
+}
+
+.footer-links a {
+    margin: 0; /* entfernt Bootstrap-Margin */
+    padding: 0; /* entfernt Innenabstand */
+}
+
+.footer-links a i {
+    margin-right: 6px; /* Icon bleibt sauber neben Text */
+}
+
+/* Optionale: Link-Gruppen enger machen */
+.footer-section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
