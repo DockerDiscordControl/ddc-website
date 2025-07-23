@@ -10,210 +10,549 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="styles.css">
+  <!-- Marked.js für Markdown-Rendering -->
   <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
 </head>
 <body>
-  <!-- HEADER bleibt unverändert -->
   <header class="hero">
-    <!-- ... dein kompletter Headercode hier ... -->
+    <div class="container">
+      <div class="logo-container">
+        <img src="ddc_web.png" alt="DDC Logo" class="main-logo" loading="eager">
+        <div class="brand-text" id="neon-ddc">DDC</div>
+      </div>
+      <h1>DockerDiscordControl</h1>
+      <div class="hero-text">
+        <h2 class="tagline">Control your Docker containers directly from Discord!</h2>
+        <div class="description-wrapper">
+          <p class="description">
+            DDC is a powerful bot and web UI to <span class="highlight">start</span>, <span class="highlight">stop</span>, 
+            <span class="highlight">monitor</span> and <span class="highlight">manage</span> your containers 
+            from any Discord server.
+          </p>
+        </div>
+        
+        <div class="donation-section-hero">
+          <p class="donation-text">If you find DDC helpful, consider supporting its development:</p>
+          <div class="d-flex justify-content-center flex-wrap">
+            <span class="d-inline-block mx-2 align-middle">
+              <div class="sparkle-wrapper">
+                <a href="https://buymeacoffee.com/dockerdiscordcontrol" target="_blank" rel="noopener noreferrer" class="donation-link">
+                  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee">
+                </a>
+                <div class="sparkles"></div>
+              </div>
+            </span>
+            <span class="d-inline-block mx-2 align-middle">
+              <div class="sparkle-wrapper">
+                <a href="https://www.paypal.com/donate/?hosted_button_id=XKVC6SFXU2GW4" target="_blank" rel="noopener noreferrer" class="btn btn-lg donation-btn">
+                  <i class="bi bi-paypal me-2"></i> Donate with PayPal
+                </a>
+                <div class="sparkles"></div>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center flex-wrap mb-4">
+        <a href="https://github.com/DockerDiscordControl/DockerDiscordControl" class="btn btn-github btn-lg m-2">
+          <i class="bi bi-github me-2"></i>GitHub Repository
+        </a>
+        <a href="https://github.com/DockerDiscordControl/DockerDiscordControl#installation" class="btn btn-outline-light btn-lg m-2">
+          <i class="bi bi-book me-2"></i>Installation Guide
+        </a>
+        <a href="discord-bot-setup.html" class="btn btn-discord btn-lg m-2">
+          <i class="bi bi-discord me-2"></i>Bot Setup Guide
+        </a>
+      </div>
+    </div>
   </header>
 
-  <!-- Plattform-Section (angepasst) -->
-  <section class="platform-selection-section">
-    <div class="container">
-      <h2 class="section-title">
-        <i class="bi bi-download me-2"></i>Choose Your Platform
-      </h2>
-      <p class="platform-subtitle">
-        DDC is optimized for each platform with dedicated repositories for the best experience
-      </p>
+  <!-- Platform Selection Section -->
+<section class="platform-selection-section">
+  <div class="container">
+    <h2 class="section-title">
+      <i class="bi bi-download me-2"></i>Choose Your Platform
+    </h2>
+    <p class="platform-subtitle">
+      DDC is optimized for each platform with dedicated repositories for the best experience
+    </p>
 
-      <div class="row g-4 align-items-stretch">
-        <!-- Jede Spalte bekommt d-flex -->
-        <div class="col-lg-3 col-md-6 d-flex">
-          <div class="platform-card universal-platform h-100 d-flex flex-column w-100">
-            <div class="platform-icon text-center mb-3">
-              <i class="bi bi-server"></i>
-            </div>
-            <h3 class="text-center">Universal</h3>
-            <p class="platform-description text-center">
-              For Unraid, Docker servers and general setups
-            </p>
-            <div class="platform-features flex-grow-1">
-              <div class="feature-list">
-                <div class="feature-item">- Docker Native</div>
-                <div class="feature-item">- Server Ready</div>
-                <div class="feature-item">- Unraid Support</div>
-              </div>
-            </div>
-            <div class="text-center mt-auto">
-              <a href="https://github.com/DockerDiscordControl/DockerDiscordControl"
-                 class="btn btn-platform-primary" target="_blank">
-                <i class="bi bi-github me-2"></i>Get Universal Version
-              </a>
+    <div class="row g-4">
+      <!-- Universal -->
+      <div class="col-lg-3 col-md-6">
+        <div class="platform-card universal-platform h-100 d-flex flex-column">
+          <div class="platform-icon text-center mb-3">
+            <i class="bi bi-server"></i>
+          </div>
+          <h3 class="text-center">Universal</h3>
+          <p class="platform-description text-center">
+            For Unraid, Docker servers and general setups
+          </p>
+          <div class="platform-features flex-grow-1">
+            <div class="feature-list">
+              <div class="feature-item">- Docker Native</div>
+              <div class="feature-item">- Server Ready</div>
+              <div class="feature-item">- Unraid Support</div>
             </div>
           </div>
-        </div>
-
-        <!-- Windows -->
-        <div class="col-lg-3 col-md-6 d-flex">
-          <div class="platform-card windows-platform h-100 d-flex flex-column w-100">
-            <div class="platform-icon text-center mb-3">
-              <i class="bi bi-windows"></i>
-            </div>
-            <h3 class="text-center">Windows</h3>
-            <p class="platform-description text-center">
-              Optimized for Windows Docker Desktop
-            </p>
-            <div class="platform-features flex-grow-1">
-              <div class="feature-list">
-                <div class="feature-item">- Docker Desktop</div>
-                <div class="feature-item">- WSL2 Support</div>
-                <div class="feature-item">- Windows Native</div>
-              </div>
-            </div>
-            <div class="text-center mt-auto">
-              <a href="https://github.com/DockerDiscordControl/DockerDiscordControl-Windows"
-                 class="btn btn-platform-primary" target="_blank">
-                <i class="bi bi-github me-2"></i>Get Windows Version
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Linux -->
-        <div class="col-lg-3 col-md-6 d-flex">
-          <div class="platform-card linux-platform h-100 d-flex flex-column w-100">
-            <div class="platform-icon text-center mb-3">
-              <i class="bi bi-ubuntu"></i>
-            </div>
-            <h3 class="text-center">Linux</h3>
-            <p class="platform-description text-center">
-              Native Linux with system integration
-            </p>
-            <div class="platform-features flex-grow-1">
-              <div class="feature-list">
-                <div class="feature-item">- Systemd Ready</div>
-                <div class="feature-item">- Docker Native</div>
-                <div class="feature-item">- Multi-Distro</div>
-              </div>
-            </div>
-            <div class="text-center mt-auto">
-              <a href="https://github.com/DockerDiscordControl/DockerDiscordControl-Linux"
-                 class="btn btn-platform-primary" target="_blank">
-                <i class="bi bi-github me-2"></i>Get Linux Version
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- macOS -->
-        <div class="col-lg-3 col-md-6 d-flex">
-          <div class="platform-card macos-platform h-100 d-flex flex-column w-100">
-            <div class="platform-icon text-center mb-3">
-              <i class="bi bi-apple"></i>
-            </div>
-            <h3 class="text-center">macOS</h3>
-            <p class="platform-description text-center">
-              Optimized for Docker Desktop on Mac
-            </p>
-            <div class="platform-features flex-grow-1">
-              <div class="feature-list">
-                <div class="feature-item">- Docker Desktop</div>
-                <div class="feature-item">- Apple Silicon</div>
-                <div class="feature-item">- Intel Support</div>
-              </div>
-            </div>
-            <div class="text-center mt-auto">
-              <a href="https://github.com/DockerDiscordControl/DockerDiscordControl-Mac"
-                 class="btn btn-platform-primary" target="_blank">
-                <i class="bi bi-github me-2"></i>Get macOS Version
-              </a>
-            </div>
+          <div class="text-center mt-auto">
+            <a href="https://github.com/DockerDiscordControl/DockerDiscordControl" 
+               class="btn btn-platform-primary" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github me-2"></i>Get Universal Version
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="platform-note text-center mt-4">
-        <i class="bi bi-info-circle me-2"></i>
-        Each version is specifically optimized for its platform with tailored installation scripts,
-        dependencies, and configuration options for the best user experience.
+      <!-- Windows -->
+      <div class="col-lg-3 col-md-6">
+        <div class="platform-card windows-platform h-100 d-flex flex-column">
+          <div class="platform-icon text-center mb-3">
+            <i class="bi bi-windows"></i>
+          </div>
+          <h3 class="text-center">Windows</h3>
+          <p class="platform-description text-center">
+            Optimized for Windows Docker Desktop
+          </p>
+          <div class="platform-features flex-grow-1">
+            <div class="feature-list">
+              <div class="feature-item">- Docker Desktop</div>
+              <div class="feature-item">- WSL2 Support</div>
+              <div class="feature-item">- Windows Native</div>
+            </div>
+          </div>
+          <div class="text-center mt-auto">
+            <a href="https://github.com/DockerDiscordControl/DockerDiscordControl-Windows" 
+               class="btn btn-platform-primary" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github me-2"></i>Get Windows Version
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linux -->
+      <div class="col-lg-3 col-md-6">
+        <div class="platform-card linux-platform h-100 d-flex flex-column">
+          <div class="platform-icon text-center mb-3">
+            <i class="bi bi-ubuntu"></i>
+          </div>
+          <h3 class="text-center">Linux</h3>
+          <p class="platform-description text-center">
+            Native Linux with system integration
+          </p>
+          <div class="platform-features flex-grow-1">
+            <div class="feature-list">
+              <div class="feature-item">- Systemd Ready</div>
+              <div class="feature-item">- Docker Native</div>
+              <div class="feature-item">- Multi-Distro</div>
+            </div>
+          </div>
+          <div class="text-center mt-auto">
+            <a href="https://github.com/DockerDiscordControl/DockerDiscordControl-Linux" 
+               class="btn btn-platform-primary" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github me-2"></i>Get Linux Version
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- macOS -->
+      <div class="col-lg-3 col-md-6">
+        <div class="platform-card macos-platform h-100 d-flex flex-column">
+          <div class="platform-icon text-center mb-3">
+            <i class="bi bi-apple"></i>
+          </div>
+          <h3 class="text-center">macOS</h3>
+          <p class="platform-description text-center">
+            Optimized for Docker Desktop on Mac
+          </p>
+          <div class="platform-features flex-grow-1">
+            <div class="feature-list">
+              <div class="feature-item">- Docker Desktop</div>
+              <div class="feature-item">- Apple Silicon</div>
+              <div class="feature-item">- Intel Support</div>
+            </div>
+          </div>
+          <div class="text-center mt-auto">
+            <a href="https://github.com/DockerDiscordControl/DockerDiscordControl-Mac" 
+               class="btn btn-platform-primary" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github me-2"></i>Get macOS Version
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Note Section -->
+    <div class="platform-note text-center mt-4">
+      <i class="bi bi-info-circle me-2"></i>
+      Each version is specifically optimized for its platform with tailored installation scripts,
+      dependencies, and configuration options for the best user experience.
+    </div>
+  </div>
+</section>
+  
+  <!-- Screenshot Carousel -->
+  <section class="screenshot-carousel-section">
+    <div class="container">
+      <div class="screenshot-carousel">
+        <div class="carousel-container">
+          <div class="carousel-slides" id="carouselSlides">
+            <div class="carousel-slide active" data-feature="control">
+              <img src="control1.png" alt="Main Control Panel" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Main Control Panel</h3>
+                <p>Central control interface for managing all Docker containers</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="status">
+              <img src="status1.png" alt="Container Status Overview" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Container Status Overview</h3>
+                <p>Real-time monitoring and status display of all containers</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="control">
+              <img src="control2.png" alt="Advanced Control" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Advanced Control</h3>
+                <p>Detailed container management and advanced operations</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="status">
+              <img src="status3.png" alt="Detailed Status" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Detailed Status Monitoring</h3>
+                <p>Comprehensive container status and performance metrics</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="discord">
+              <img src="commands.png" alt="Discord Commands" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Discord Commands</h3>
+                <p>Control Docker containers with slash commands directly from Discord</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="webui">
+              <img src="webui1.png" alt="Web Interface Dashboard" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Web Interface - Dashboard</h3>
+                <p>Easy configuration through a secure web UI dashboard</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="webui">
+              <img src="webui2.png" alt="Web Interface Configuration" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Web Interface - Configuration</h3>
+                <p>Advanced configuration options and settings</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="webui">
+              <img src="webui3.png" alt="Web Interface Monitoring" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Web Interface - Monitoring</h3>
+                <p>Real-time monitoring and log viewing</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="webui">
+              <img src="webui4.png" alt="Web Interface Management" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Web Interface - Management</h3>
+                <p>Container management and control panel</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="scheduling">
+              <img src="task1.png" alt="Task Scheduling" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Task Scheduling</h3>
+                <p>Schedule container operations with flexible timing options</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="scheduling">
+              <img src="task2.png" alt="Advanced Scheduling" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Advanced Scheduling</h3>
+                <p>Complex scheduling patterns and automation rules</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navigation Buttons -->
+          <button class="carousel-btn carousel-prev" onclick="changeSlide(-1)">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button class="carousel-btn carousel-next" onclick="changeSlide(1)">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+          
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <button class="indicator active" onclick="goToSlide(0)" data-feature="control" title="Main Control Panel"></button>
+            <button class="indicator" onclick="goToSlide(1)" data-feature="status" title="Container Status Overview"></button>
+            <button class="indicator" onclick="goToSlide(2)" data-feature="control" title="Advanced Control"></button>
+            <button class="indicator" onclick="goToSlide(3)" data-feature="status" title="Detailed Status"></button>
+            <button class="indicator" onclick="goToSlide(4)" data-feature="discord" title="Discord Commands"></button>
+            <button class="indicator" onclick="goToSlide(5)" data-feature="webui" title="Web Interface 1"></button>
+            <button class="indicator" onclick="goToSlide(6)" data-feature="webui" title="Web Interface 2"></button>
+            <button class="indicator" onclick="goToSlide(7)" data-feature="webui" title="Web Interface 3"></button>
+            <button class="indicator" onclick="goToSlide(8)" data-feature="webui" title="Web Interface 4"></button>
+            <button class="indicator" onclick="goToSlide(9)" data-feature="scheduling" title="Task Scheduling 1"></button>
+            <button class="indicator" onclick="goToSlide(10)" data-feature="scheduling" title="Task Scheduling 2"></button>
+          </div>
+          
+          <!-- Auto-play Controls -->
+          <div class="carousel-controls">
+            <button class="control-btn" onclick="toggleAutoplay()" id="autoplayBtn">
+              <i class="bi bi-pause-fill"></i>
+            </button>
+            <button class="control-btn" onclick="openCarouselModal()" id="fullscreenBtn">
+              <i class="bi bi-arrows-fullscreen"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Der Rest deiner Webseite (Karussell, Features, Disclaimer etc.) bleibt unverändert -->
-  <!-- ... dein kompletter Carousel- und Feature-Code hier ... -->
-
-  <!-- Footer (angepasst: Email bündig) -->
-  <footer class="footer">
+  <section class="section-container">
     <div class="container">
-      <div class="footer-content">
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <div class="footer-section">
-              <h5>DockerDiscordControl</h5>
-              <p>&copy; 2025 DockerDiscordControl Project</p>
-              <div class="footer-links d-flex flex-wrap">
-                <a href="https://github.com/DockerDiscordControl/DockerDiscordControl" class="footer-link me-3">
-                  <i class="bi bi-github me-1"></i>GitHub
-                </a>
-                <a href="https://github.com/DockerDiscordControl/DockerDiscordControl/blob/main/LICENSE" class="footer-link me-3">
-                  <i class="bi bi-file-earmark-text me-1"></i>License
-                </a>
-                <a href="https://ddc.bot" class="footer-link">
-                  <i class="bi bi-house-door me-1"></i>Homepage
-                </a>
+      <h2 class="section-title">Features</h2>
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="feature-card" data-feature="control" onclick="selectFeature('control')">
+            <div class="feature-image">
+              <img src="control1.png" 
+                   alt="Control Panel & Status Screenshot" 
+                   class="feature-screenshot"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="feature-icon-fallback" style="display: none;">
+                <i class="bi bi-gear-fill mb-3" style="font-size: 2rem; color: var(--primary-color);"></i>
+              </div>
+            </div>
+            <div class="feature-overlay">
+              <i class="bi bi-eye"></i>
+              <span>View in carousel</span>
+            </div>
+            <h3>Control & Status</h3>
+            <p>Central control interface and real-time container status monitoring</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="feature-card" data-feature="discord" onclick="selectFeature('discord')">
+            <div class="feature-image">
+              <img src="commands.png" 
+                   alt="Discord Integration Screenshot" 
+                   class="feature-screenshot"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="feature-icon-fallback" style="display: none;">
+                <i class="bi bi-discord mb-3" style="font-size: 2rem; color: var(--primary-color);"></i>
+              </div>
+            </div>
+            <div class="feature-overlay">
+              <i class="bi bi-eye"></i>
+              <span>View in carousel</span>
+            </div>
+            <h3>Discord Integration</h3>
+            <p>Control Docker containers with slash commands directly from Discord</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="feature-card" data-feature="webui" onclick="selectFeature('webui')">
+            <div class="feature-image">
+              <img src="webui1.png" 
+                   alt="Web Interface Screenshot" 
+                   class="feature-screenshot"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="feature-icon-fallback" style="display: none;">
+                <i class="bi bi-window mb-3" style="font-size: 2rem; color: var(--primary-color);"></i>
+              </div>
+            </div>
+            <div class="feature-overlay">
+              <i class="bi bi-eye"></i>
+              <span>View in carousel</span>
+            </div>
+            <h3>Web Interface</h3>
+            <p>Easy configuration through a secure web UI</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="feature-card" data-feature="scheduling" onclick="selectFeature('scheduling')">
+            <div class="feature-image">
+              <img src="task1.png" 
+                   alt="Scheduling Screenshot" 
+                   class="feature-screenshot"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="feature-icon-fallback" style="display: none;">
+                <i class="bi bi-calendar-event mb-3" style="font-size: 2rem; color: var(--primary-color);"></i>
+              </div>
+            </div>
+            <div class="feature-overlay">
+              <i class="bi bi-eye"></i>
+              <span>View in carousel</span>
+            </div>
+            <h3>Scheduling</h3>
+            <p>Schedule container operations with flexible timing options</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neue README Sektion -->
+  <section class="section-container readme-section">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="bi bi-file-earmark-text me-2"></i>Documentation
+      </h2>
+      <div class="readme-container">
+        <div class="readme-header">
+          <div class="d-flex align-items-center justify-content-between flex-wrap">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-github me-2"></i>
+              <span>Loaded from GitHub Repository</span>
+            </div>
+            <div class="readme-status">
+              <span id="readme-status" class="badge bg-secondary">Loading...</span>
+            </div>
+          </div>
+        </div>
+        <div class="readme-content" id="readme-content">
+          <div class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading README...</span>
+            </div>
+            <p class="mt-3 text-muted">Loading documentation from GitHub...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer Section -->
+  <section class="disclaimer-section">
+    <div class="container">
+      <div class="disclaimer-container">
+        <div class="disclaimer-header">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>
+          <h3>Important Disclaimer</h3>
+        </div>
+        <div class="disclaimer-content">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="disclaimer-item">
+                <h4><i class="bi bi-shield-exclamation me-2"></i>Security Notice</h4>
+                <p>DockerDiscordControl provides powerful container management capabilities. Ensure proper access controls and security measures are in place before deployment in production environments.</p>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="disclaimer-item">
+                <h4><i class="bi bi-gear-wide-connected me-2"></i>System Requirements</h4>
+                <p>This tool requires Docker and appropriate system permissions. Test thoroughly in development environments before production use.</p>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="disclaimer-item">
+                <h4><i class="bi bi-file-earmark-text me-2"></i>License & Warranty</h4>
+                <p>DDC is provided under the MIT License. Use at your own risk. No warranty is provided for any damages or data loss.</p>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="disclaimer-item">
+                <h4><i class="bi bi-people-fill me-2"></i>Community Support</h4>
+                <p>This is an open-source project. Support is provided by the community through GitHub issues and discussions.</p>
               </div>
             </div>
           </div>
+          <div class="disclaimer-footer">
+            <p class="text-center mb-0">
+              <strong>By using DockerDiscordControl, you acknowledge that you have read and understood these terms.</strong>
+              <br>
+              <small class="disclaimer-small">For detailed information, please refer to the 
+                <a href="https://github.com/DockerDiscordControl/DockerDiscordControl/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="disclaimer-link">
+                  LICENSE file
+                </a> and 
+                <a href="https://github.com/DockerDiscordControl/DockerDiscordControl#readme" target="_blank" rel="noopener noreferrer" class="disclaimer-link">
+                  documentation
+                </a>.
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="col-md-6 mb-3">
-            <div class="footer-section">
-              <h5>Impressum / Legal Notice</h5>
-              <div class="impressum-content">
-                <p class="mb-2">
-                  <strong>Responsible for content:</strong><br>
-                  MAX – DockerDiscordControl Project
-                </p>
-                <p class="mb-2">
-                  <strong>Contact:</strong><br>
-                  <span class="footer-link" style="display: block;">
-                    <a href="mailto:max@ddc.bot" style="text-decoration: none; color: inherit;">
-                      max@ddc.bot
-                    </a>
-                  </span>
-                </p>
-                <p class="mb-0">
-                  <strong>Project:</strong><br>
-                  Open Source under MIT License
-                </p>
-              </div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-6 mb-3">
+          <div class="footer-section">
+            <h5>DockerDiscordControl</h5>
+            <p>&copy; 2025 DockerDiscordControl Project</p>
+            <div class="footer-links d-flex flex-wrap">
+              <a href="https://github.com/DockerDiscordControl/DockerDiscordControl" class="footer-link me-3">
+                <i class="bi bi-github me-1"></i>GitHub
+              </a>
+              <a href="https://github.com/DockerDiscordControl/DockerDiscordControl/blob/main/LICENSE" class="footer-link me-3">
+                <i class="bi bi-file-earmark-text me-1"></i>License
+              </a>
+              <a href="https://ddc.bot" class="footer-link">
+                <i class="bi bi-house-door me-1"></i>Homepage
+              </a>
             </div>
           </div>
         </div>
 
-        <div class="footer-bottom">
-          <div class="row align-items-center">
-            <div class="col-md-8">
-              <p class="mb-0 small">
-                This is an open-source project. No commercial use intended.
-                For support, please use
-                <a href="https://github.com/DockerDiscordControl/DockerDiscordControl/issues" class="footer-link">
-                  GitHub Issues
-                </a>.
+        <!-- Right Column -->
+        <div class="col-md-6 mb-3">
+          <div class="footer-section">
+            <h5>Impressum / Legal Notice</h5>
+            <div class="impressum-content">
+              <p class="mb-2">
+                <strong>Responsible for content:</strong><br>
+                MAX – DockerDiscordControl Project
               </p>
-            </div>
-            <div class="col-md-4 text-md-end">
-              <p class="mb-0 small text-muted">
-                Made with ❤️ for the Docker community
+              <p class="mb-2">
+                <strong>Contact:</strong><br>
+                <span class="footer-link" style="display: inline-block;">
+                <a href="mailto:max@ddc.bot" style="text-decoration: none; color: inherit;">
+                max@ddc.bot
+                </a>
+                </span>
+              </p>
+              <p class="mb-0">
+                <strong>Project:</strong><br>
+                Open Source under MIT License
               </p>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <p class="mb-0 small">
+              This is an open-source project. No commercial use intended. 
+              For support, please use 
+              <a href="https://github.com/DockerDiscordControl/DockerDiscordControl/issues" class="footer-link">
+                GitHub Issues
+              </a>.
+            </p>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <p class="mb-0 small text-muted">
+              Made with ❤️ for the Docker community
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <div class="fixed-credit">
     <div class="credit-content">
@@ -223,5 +562,29 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="app.js"></script>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <div class="image-modal-content" onclick="event.stopPropagation()">
+      <div class="image-modal-header">
+        <h3 id="modalTitle">Feature Screenshot</h3>
+        <button class="modal-close" onclick="closeImageModal()">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="image-modal-body">
+        <img id="modalImage" src="" alt="Feature Screenshot">
+        <p id="modalDescription">Feature description</p>
+      </div>
+      <div class="image-modal-footer">
+        <button class="btn btn-outline-light" onclick="closeImageModal()">
+          <i class="bi bi-x-circle me-2"></i>Close
+        </button>
+        <a id="modalDownload" href="" download class="btn btn-primary">
+          <i class="bi bi-download me-2"></i>Download Image
+        </a>
+      </div>
+    </div>
+  </div>
 </body>
-</html>
+</html> 
