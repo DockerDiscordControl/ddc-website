@@ -68,91 +68,112 @@
   </header>
 
   <!-- Platform Selection Section -->
-  <section class="platform-selection-section">
-    <div class="container">
-      <h2 class="section-title">
-        <i class="bi bi-download me-2"></i>Choose Your Platform
-      </h2>
-      <p class="platform-subtitle">DDC is optimized for each platform with dedicated repositories for the best experience</p>
-      
-      <div class="row g-4">
-        <div class="col-lg-3 col-md-6">
-          <div class="platform-card universal-platform">
-            <div class="platform-icon">
-              <i class="bi bi-server"></i>
+<section class="platform-selection-section">
+  <div class="container">
+    <h2 class="section-title">
+      <i class="bi bi-download me-2"></i>Choose Your Platform
+    </h2>
+    <p class="platform-subtitle">
+      DDC is optimized for each platform with dedicated repositories for the best experience
+    </p>
+
+    <div class="row g-4">
+      <!-- Universal -->
+      <div class="col-lg-3 col-md-6">
+        <div class="platform-card universal-platform h-100 d-flex flex-column">
+          <div class="platform-icon text-center mb-3">
+            <i class="bi bi-server"></i>
+          </div>
+          <h3 class="text-center">Universal</h3>
+          <p class="platform-description text-center">
+            For Unraid, Docker servers and general setups
+          </p>
+          <div class="platform-features flex-grow-1">
+            <div class="feature-list">
+              <div class="feature-item">- Docker Native</div>
+              <div class="feature-item">- Server Ready</div>
+              <div class="feature-item">- Unraid Support</div>
             </div>
-            <h3>Universal</h3>
-            <p class="platform-description">For Unraid, Docker servers and general setups</p>
-            <div class="platform-features">
-              <div class="feature-list">
-                <div class="feature-item">- Docker Native</div>
-                <div class="feature-item">- Server Ready</div>
-                <div class="feature-item">- Unraid Support</div>
-              </div>
-            </div>
+          </div>
+          <div class="text-center mt-auto">
             <a href="https://github.com/DockerDiscordControl/DockerDiscordControl" 
                class="btn btn-platform-primary" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github me-2"></i>Get Universal Version
             </a>
           </div>
         </div>
-        
-        <div class="col-lg-3 col-md-6">
-          <div class="platform-card windows-platform">
-            <div class="platform-icon">
-              <i class="bi bi-windows"></i>
+      </div>
+
+      <!-- Windows -->
+      <div class="col-lg-3 col-md-6">
+        <div class="platform-card windows-platform h-100 d-flex flex-column">
+          <div class="platform-icon text-center mb-3">
+            <i class="bi bi-windows"></i>
+          </div>
+          <h3 class="text-center">Windows</h3>
+          <p class="platform-description text-center">
+            Optimized for Windows Docker Desktop
+          </p>
+          <div class="platform-features flex-grow-1">
+            <div class="feature-list">
+              <div class="feature-item">- Docker Desktop</div>
+              <div class="feature-item">- WSL2 Support</div>
+              <div class="feature-item">- Windows Native</div>
             </div>
-            <h3>Windows</h3>
-            <p class="platform-description">Optimized for Windows Docker Desktop</p>
-            <div class="platform-features">
-              <div class="feature-list">
-                <div class="feature-item">- Docker Desktop</div>
-                <div class="feature-item">- WSL2 Support</div>
-                <div class="feature-item">- Windows Native</div>
-              </div>
-            </div>
+          </div>
+          <div class="text-center mt-auto">
             <a href="https://github.com/DockerDiscordControl/DockerDiscordControl-Windows" 
                class="btn btn-platform-primary" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github me-2"></i>Get Windows Version
             </a>
           </div>
         </div>
-        
-        <div class="col-lg-3 col-md-6">
-          <div class="platform-card linux-platform">
-            <div class="platform-icon">
-              <i class="bi bi-ubuntu"></i>
+      </div>
+
+      <!-- Linux -->
+      <div class="col-lg-3 col-md-6">
+        <div class="platform-card linux-platform h-100 d-flex flex-column">
+          <div class="platform-icon text-center mb-3">
+            <i class="bi bi-ubuntu"></i>
+          </div>
+          <h3 class="text-center">Linux</h3>
+          <p class="platform-description text-center">
+            Native Linux with system integration
+          </p>
+          <div class="platform-features flex-grow-1">
+            <div class="feature-list">
+              <div class="feature-item">- Systemd Ready</div>
+              <div class="feature-item">- Docker Native</div>
+              <div class="feature-item">- Multi-Distro</div>
             </div>
-            <h3>Linux</h3>
-            <p class="platform-description">Native Linux with system integration</p>
-            <div class="platform-features">
-              <div class="feature-list">
-                <div class="feature-item">- Systemd Ready</div>
-                <div class="feature-item">- Docker Native</div>
-                <div class="feature-item">- Multi-Distro</div>
-              </div>
-            </div>
+          </div>
+          <div class="text-center mt-auto">
             <a href="https://github.com/DockerDiscordControl/DockerDiscordControl-Linux" 
                class="btn btn-platform-primary" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github me-2"></i>Get Linux Version
             </a>
           </div>
         </div>
-        
-        <div class="col-lg-3 col-md-6">
-          <div class="platform-card macos-platform">
-            <div class="platform-icon">
-              <i class="bi bi-apple"></i>
+      </div>
+
+      <!-- macOS -->
+      <div class="col-lg-3 col-md-6">
+        <div class="platform-card macos-platform h-100 d-flex flex-column">
+          <div class="platform-icon text-center mb-3">
+            <i class="bi bi-apple"></i>
+          </div>
+          <h3 class="text-center">macOS</h3>
+          <p class="platform-description text-center">
+            Optimized for Docker Desktop on Mac
+          </p>
+          <div class="platform-features flex-grow-1">
+            <div class="feature-list">
+              <div class="feature-item">- Docker Desktop</div>
+              <div class="feature-item">- Apple Silicon</div>
+              <div class="feature-item">- Intel Support</div>
             </div>
-            <h3>macOS</h3>
-            <p class="platform-description">Optimized for Docker Desktop on Mac</p>
-            <div class="platform-features">
-              <div class="feature-list">
-                <div class="feature-item">- Docker Desktop</div>
-                <div class="feature-item">- Apple Silicon</div>
-                <div class="feature-item">- Intel Support</div>
-              </div>
-            </div>
+          </div>
+          <div class="text-center mt-auto">
             <a href="https://github.com/DockerDiscordControl/DockerDiscordControl-Mac" 
                class="btn btn-platform-primary" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github me-2"></i>Get macOS Version
@@ -160,15 +181,17 @@
           </div>
         </div>
       </div>
-      
-      <div class="platform-note">
-        <i class="bi bi-info-circle me-2"></i>
-        Each version is specifically optimized for its platform with tailored installation scripts, 
-        dependencies, and configuration options for the best user experience.
-      </div>
     </div>
-  </section>
 
+    <!-- Note Section -->
+    <div class="platform-note text-center mt-4">
+      <i class="bi bi-info-circle me-2"></i>
+      Each version is specifically optimized for its platform with tailored installation scripts,
+      dependencies, and configuration options for the best user experience.
+    </div>
+  </div>
+</section>
+  
   <!-- Screenshot Carousel -->
   <section class="screenshot-carousel-section">
     <div class="container">
