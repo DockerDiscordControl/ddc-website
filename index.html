@@ -614,13 +614,13 @@
 
   <!-- Neon flicker effect for footer -->
   <script>
-    // Neon flicker effect for MAX, version and DDC - same behavior for all
+    // Neon flicker effect for MAX, version and DDC
     (function setupNeonFlicker() {
         const neonMax = document.getElementById('neon-max');
         const neonVersion = document.getElementById('neon-version');
         const neonDdc = document.getElementById('neon-ddc');
 
-        // Flicker function for all neon elements (70% chance to go dark briefly)
+        // Regular flicker for MAX and DDC (70% chance to go dark briefly)
         function createFlicker(element, delay) {
             function flicker() {
                 if (element && Math.random() < 0.7) {
@@ -639,10 +639,31 @@
             setTimeout(flicker, delay);
         }
 
-        // Start all flicker effects with different delays
+        // Inverted glow effect for version (normally dark, briefly glows red)
+        function createGlow(element, delay) {
+            function glow() {
+                if (element && Math.random() < 0.7) {
+                    element.classList.add('glow');
+                    const glowDuration = Math.random() * 900 + 100;
+                    setTimeout(() => {
+                        element.classList.remove('glow');
+                    }, glowDuration);
+                }
+
+                // Schedule next glow in 5-10 seconds
+                setTimeout(glow, Math.random() * 5000 + 5000);
+            }
+
+            // Start with initial delay
+            setTimeout(glow, delay);
+        }
+
+        // Start flicker effects for MAX and DDC
         createFlicker(neonMax, 3000);
-        createFlicker(neonVersion, 2500);
         createFlicker(neonDdc, 2000);
+
+        // Start inverted glow effect for version
+        createGlow(neonVersion, 2500);
     })();
   </script>
 
