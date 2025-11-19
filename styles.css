@@ -129,6 +129,20 @@ body {
     transition: all 0.1s ease;
 }
 
+/* Red Neon Text Effect for version in footer - same as DDC logo */
+.neon-version {
+    color: #ff4d4d;
+    text-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d, 0 0 80px #ff4d4d, 0 0 120px #ff4d4d;
+    font-weight: bold;
+    transition: all 0.1s ease;
+}
+
+/* Flicker effect for version - goes dark like DDC */
+.neon-version.flicker {
+    color: #000;
+    text-shadow: none;
+}
+
 .flicker {
     opacity: 0.8;
     text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);

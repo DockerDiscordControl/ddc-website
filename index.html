@@ -17,7 +17,7 @@
   <header class="hero">
     <div class="container">
       <div class="logo-container">
-        <img src="ddc_web.png" alt="DDC Logo" class="main-logo" loading="eager">
+        <img src="ddc_logo_website.png" alt="DDC Logo" class="main-logo" loading="eager">
         <div class="brand-text" id="neon-ddc">DDC</div>
       </div>
       <h1>DockerDiscordControl</h1>
@@ -198,81 +198,102 @@
       <div class="screenshot-carousel">
         <div class="carousel-container">
           <div class="carousel-slides" id="carouselSlides">
-            <div class="carousel-slide active" data-feature="control">
-              <img src="control1.png" alt="Main Control Panel" class="carousel-image">
+            <div class="carousel-slide active" data-feature="discord">
+              <img src="images/D_ServerOverview.png" alt="Discord Server Overview" class="carousel-image">
               <div class="carousel-caption">
-                <h3>Main Control Panel</h3>
-                <p>Central control interface for managing all Docker containers</p>
-              </div>
-            </div>
-            <div class="carousel-slide" data-feature="status">
-              <img src="status1.png" alt="Container Status Overview" class="carousel-image">
-              <div class="carousel-caption">
-                <h3>Container Status Overview</h3>
-                <p>Real-time monitoring and status display of all containers</p>
-              </div>
-            </div>
-            <div class="carousel-slide" data-feature="control">
-              <img src="control2.png" alt="Advanced Control" class="carousel-image">
-              <div class="carousel-caption">
-                <h3>Advanced Control</h3>
-                <p>Detailed container management and advanced operations</p>
-              </div>
-            </div>
-            <div class="carousel-slide" data-feature="status">
-              <img src="status3.png" alt="Detailed Status" class="carousel-image">
-              <div class="carousel-caption">
-                <h3>Detailed Status Monitoring</h3>
-                <p>Comprehensive container status and performance metrics</p>
+                <h3>Discord Server Overview</h3>
+                <p>View and manage all your Docker containers directly from Discord</p>
               </div>
             </div>
             <div class="carousel-slide" data-feature="discord">
-              <img src="commands.png" alt="Discord Commands" class="carousel-image">
+              <img src="images/D_ControlContainer.png" alt="Discord Container Control" class="carousel-image">
               <div class="carousel-caption">
-                <h3>Discord Commands</h3>
-                <p>Control Docker containers with slash commands directly from Discord</p>
+                <h3>Container Control via Discord</h3>
+                <p>Start, stop, and restart containers with Discord commands</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="discord">
+              <img src="images/D_AdminOverview.png" alt="Discord Admin Overview" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Admin Dashboard</h3>
+                <p>Administrative overview with detailed container information</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="discord">
+              <img src="images/D_LiveLog.png" alt="Discord Live Logs" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Live Container Logs</h3>
+                <p>Monitor container logs in real-time directly in Discord</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="discord">
+              <img src="images/D_ProtectedInfo.png" alt="Discord Protected Container Info" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Protected Container Information</h3>
+                <p>Secure access to sensitive container information</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="discord">
+              <img src="images/D_CreateTask.png" alt="Discord Create Task" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Create Scheduled Tasks</h3>
+                <p>Schedule automated container operations from Discord</p>
               </div>
             </div>
             <div class="carousel-slide" data-feature="webui">
-              <img src="webui1.png" alt="Web Interface Dashboard" class="carousel-image">
+              <img src="images/WU_Settings.png" alt="Web UI Settings" class="carousel-image">
               <div class="carousel-caption">
-                <h3>Web Interface - Dashboard</h3>
-                <p>Easy configuration through a secure web UI dashboard</p>
+                <h3>Web UI - Settings</h3>
+                <p>Configure bot settings through the web interface</p>
               </div>
             </div>
             <div class="carousel-slide" data-feature="webui">
-              <img src="webui2.png" alt="Web Interface Configuration" class="carousel-image">
+              <img src="images/WU_BotTokenGuildID.png" alt="Web UI Bot Configuration" class="carousel-image">
               <div class="carousel-caption">
-                <h3>Web Interface - Configuration</h3>
-                <p>Advanced configuration options and settings</p>
+                <h3>Bot Token & Guild Configuration</h3>
+                <p>Easy setup of Discord bot token and guild settings</p>
               </div>
             </div>
             <div class="carousel-slide" data-feature="webui">
-              <img src="webui3.png" alt="Web Interface Monitoring" class="carousel-image">
+              <img src="images/WU_ContainerSettings.png" alt="Web UI Container Settings" class="carousel-image">
               <div class="carousel-caption">
-                <h3>Web Interface - Monitoring</h3>
-                <p>Real-time monitoring and log viewing</p>
+                <h3>Container Settings</h3>
+                <p>Configure container-specific settings and permissions</p>
               </div>
             </div>
             <div class="carousel-slide" data-feature="webui">
-              <img src="webui4.png" alt="Web Interface Management" class="carousel-image">
+              <img src="images/WU_ControlChannels.png" alt="Web UI Control Channels" class="carousel-image">
               <div class="carousel-caption">
-                <h3>Web Interface - Management</h3>
-                <p>Container management and control panel</p>
+                <h3>Control Channels Setup</h3>
+                <p>Configure Discord channels for container control</p>
               </div>
             </div>
-            <div class="carousel-slide" data-feature="scheduling">
-              <img src="task1.png" alt="Task Scheduling" class="carousel-image">
+            <div class="carousel-slide" data-feature="webui">
+              <img src="images/WU_StatusChannels.png" alt="Web UI Status Channels" class="carousel-image">
               <div class="carousel-caption">
-                <h3>Task Scheduling</h3>
-                <p>Schedule container operations with flexible timing options</p>
+                <h3>Status Channels Setup</h3>
+                <p>Configure Discord channels for status monitoring</p>
               </div>
             </div>
-            <div class="carousel-slide" data-feature="scheduling">
-              <img src="task2.png" alt="Advanced Scheduling" class="carousel-image">
+            <div class="carousel-slide" data-feature="webui">
+              <img src="images/WU_SystemLogs.png" alt="Web UI System Logs" class="carousel-image">
               <div class="carousel-caption">
-                <h3>Advanced Scheduling</h3>
-                <p>Complex scheduling patterns and automation rules</p>
+                <h3>System Logs</h3>
+                <p>View and analyze system logs through the web interface</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="webui">
+              <img src="images/WU_Tasks.png" alt="Web UI Task Management" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Task Management</h3>
+                <p>Create and manage scheduled tasks in the web interface</p>
+              </div>
+            </div>
+            <div class="carousel-slide" data-feature="discord">
+              <img src="images/D_MechDetails.png" alt="Mech Detail View" class="carousel-image">
+              <div class="carousel-caption">
+                <h3>Mech Detail View</h3>
+                <p>Access comprehensive container details and statistics</p>
               </div>
             </div>
           </div>
@@ -287,17 +308,20 @@
           
           <!-- Indicators -->
           <div class="carousel-indicators">
-            <button class="indicator active" onclick="goToSlide(0)" data-feature="control" title="Main Control Panel"></button>
-            <button class="indicator" onclick="goToSlide(1)" data-feature="status" title="Container Status Overview"></button>
-            <button class="indicator" onclick="goToSlide(2)" data-feature="control" title="Advanced Control"></button>
-            <button class="indicator" onclick="goToSlide(3)" data-feature="status" title="Detailed Status"></button>
-            <button class="indicator" onclick="goToSlide(4)" data-feature="discord" title="Discord Commands"></button>
-            <button class="indicator" onclick="goToSlide(5)" data-feature="webui" title="Web Interface 1"></button>
-            <button class="indicator" onclick="goToSlide(6)" data-feature="webui" title="Web Interface 2"></button>
-            <button class="indicator" onclick="goToSlide(7)" data-feature="webui" title="Web Interface 3"></button>
-            <button class="indicator" onclick="goToSlide(8)" data-feature="webui" title="Web Interface 4"></button>
-            <button class="indicator" onclick="goToSlide(9)" data-feature="scheduling" title="Task Scheduling 1"></button>
-            <button class="indicator" onclick="goToSlide(10)" data-feature="scheduling" title="Task Scheduling 2"></button>
+            <button class="indicator active" onclick="goToSlide(0)" data-feature="discord" title="Discord Server Overview"></button>
+            <button class="indicator" onclick="goToSlide(1)" data-feature="discord" title="Discord Container Control"></button>
+            <button class="indicator" onclick="goToSlide(2)" data-feature="discord" title="Discord Admin Overview"></button>
+            <button class="indicator" onclick="goToSlide(3)" data-feature="discord" title="Discord Live Logs"></button>
+            <button class="indicator" onclick="goToSlide(4)" data-feature="discord" title="Discord Protected Info"></button>
+            <button class="indicator" onclick="goToSlide(5)" data-feature="discord" title="Discord Create Task"></button>
+            <button class="indicator" onclick="goToSlide(6)" data-feature="webui" title="Web UI Settings"></button>
+            <button class="indicator" onclick="goToSlide(7)" data-feature="webui" title="Web UI Bot Configuration"></button>
+            <button class="indicator" onclick="goToSlide(8)" data-feature="webui" title="Web UI Container Settings"></button>
+            <button class="indicator" onclick="goToSlide(9)" data-feature="webui" title="Web UI Control Channels"></button>
+            <button class="indicator" onclick="goToSlide(10)" data-feature="webui" title="Web UI Status Channels"></button>
+            <button class="indicator" onclick="goToSlide(11)" data-feature="webui" title="Web UI System Logs"></button>
+            <button class="indicator" onclick="goToSlide(12)" data-feature="webui" title="Web UI Tasks"></button>
+            <button class="indicator" onclick="goToSlide(13)" data-feature="discord" title="Mech Detail View"></button>
           </div>
           
           <!-- Auto-play Controls -->
@@ -318,30 +342,12 @@
     <div class="container">
       <h2 class="section-title">Features</h2>
       <div class="row">
-        <div class="col-md-3 col-sm-6 mb-4">
-          <div class="feature-card" data-feature="control" onclick="selectFeature('control')">
-            <div class="feature-image">
-              <img src="control1.png" 
-                   alt="Control Panel & Status Screenshot" 
-                   class="feature-screenshot"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-              <div class="feature-icon-fallback" style="display: none;">
-                <i class="bi bi-gear-fill mb-3" style="font-size: 2rem; color: var(--primary-color);"></i>
-              </div>
-            </div>
-            <div class="feature-overlay">
-              <i class="bi bi-eye"></i>
-              <span>View in carousel</span>
-            </div>
-            <h3>Control & Status</h3>
-            <p>Central control interface and real-time container status monitoring</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
+        <div class="col-md-4 col-sm-6 mb-4">
           <div class="feature-card" data-feature="discord" onclick="selectFeature('discord')">
+            <div class="feature-badge" style="position: absolute; top: 10px; right: 10px; background: #4299e1; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; z-index: 10;">Status Channels</div>
             <div class="feature-image">
-              <img src="commands.png" 
-                   alt="Discord Integration Screenshot" 
+              <img src="images/D_ServerOverview.png"
+                   alt="Discord Server Overview Screenshot"
                    class="feature-screenshot"
                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
               <div class="feature-icon-fallback" style="display: none;">
@@ -352,15 +358,35 @@
               <i class="bi bi-eye"></i>
               <span>View in carousel</span>
             </div>
-            <h3>Discord Integration</h3>
-            <p>Control Docker containers with slash commands directly from Discord</p>
+            <h3>Server Overview</h3>
+            <p>Real-time container status monitoring with automated status updates in Discord channels</p>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6 mb-4">
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="feature-card" data-feature="discord" onclick="selectFeature('discord')">
+            <div class="feature-badge" style="position: absolute; top: 10px; right: 10px; background: #ff4d4d; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; z-index: 10;">Admin Channels</div>
+            <div class="feature-image">
+              <img src="images/D_AdminOverview.png"
+                   alt="Discord Admin Overview Screenshot"
+                   class="feature-screenshot"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="feature-icon-fallback" style="display: none;">
+                <i class="bi bi-discord mb-3" style="font-size: 2rem; color: var(--primary-color);"></i>
+              </div>
+            </div>
+            <div class="feature-overlay">
+              <i class="bi bi-eye"></i>
+              <span>View in carousel</span>
+            </div>
+            <h3>Admin Overview</h3>
+            <p>Advanced container management with slash commands and detailed control options for admins</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
           <div class="feature-card" data-feature="webui" onclick="selectFeature('webui')">
             <div class="feature-image">
-              <img src="webui1.png" 
-                   alt="Web Interface Screenshot" 
+              <img src="images/WU_Settings.png"
+                   alt="Web Interface Configuration Screenshot"
                    class="feature-screenshot"
                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
               <div class="feature-icon-fallback" style="display: none;">
@@ -372,14 +398,35 @@
               <span>View in carousel</span>
             </div>
             <h3>Web Interface</h3>
-            <p>Easy configuration through a secure web UI</p>
+            <p>Configure and manage your bot through an intuitive and secure web dashboard</p>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-          <div class="feature-card" data-feature="scheduling" onclick="selectFeature('scheduling')">
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="feature-card" data-feature="discord" onclick="selectFeature('discord')">
             <div class="feature-image">
-              <img src="task1.png" 
-                   alt="Scheduling Screenshot" 
+              <img src="images/D_LiveLog.png"
+                   alt="Live Container Logs Screenshot"
+                   class="feature-screenshot"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="feature-icon-fallback" style="display: none;">
+                <i class="bi bi-terminal mb-3" style="font-size: 2rem; color: var(--primary-color);"></i>
+              </div>
+            </div>
+            <div class="feature-overlay">
+              <i class="bi bi-eye"></i>
+              <span>View in carousel</span>
+            </div>
+            <h3>Live Logs</h3>
+            <p>Monitor container logs in real-time directly within Discord for instant insights</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="feature-card" data-feature="webui" onclick="selectFeature('webui')">
+            <div class="feature-image">
+              <img src="images/WU_Tasks.png"
+                   alt="Task Scheduling Screenshot"
                    class="feature-screenshot"
                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
               <div class="feature-icon-fallback" style="display: none;">
@@ -390,8 +437,8 @@
               <i class="bi bi-eye"></i>
               <span>View in carousel</span>
             </div>
-            <h3>Scheduling</h3>
-            <p>Schedule container operations with flexible timing options</p>
+            <h3>Task Scheduling</h3>
+            <p>Automate container operations with flexible scheduling and cron-based timing</p>
           </div>
         </div>
       </div>
@@ -554,14 +601,50 @@
   </div>
 </footer>
 
-  <div class="fixed-credit">
-    <div class="credit-content">
-      Built by <span class="neon-max" id="neon-max">MAX</span>
-    </div>
-  </div>
+  <footer class="text-center fixed-bottom py-2">
+    <p style="color: #6c757d; font-size: 0.8em; margin-bottom: 0;">
+      Built by <span class="neon-max" id="neon-max">MAX</span> |
+      <a href="https://github.com/DockerDiscordControl/DockerDiscordControl" target="_blank" class="text-secondary">GitHub</a> |
+      <span class="neon-version" id="neon-version">v2.0</span>
+    </p>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="app.js"></script>
+
+  <!-- Neon flicker effect for footer -->
+  <script>
+    // Neon flicker effect for MAX, version and DDC - same behavior for all
+    (function setupNeonFlicker() {
+        const neonMax = document.getElementById('neon-max');
+        const neonVersion = document.getElementById('neon-version');
+        const neonDdc = document.getElementById('neon-ddc');
+
+        // Flicker function for all neon elements (70% chance to go dark briefly)
+        function createFlicker(element, delay) {
+            function flicker() {
+                if (element && Math.random() < 0.7) {
+                    element.classList.add('flicker');
+                    const flickerDuration = Math.random() * 900 + 100;
+                    setTimeout(() => {
+                        element.classList.remove('flicker');
+                    }, flickerDuration);
+                }
+
+                // Schedule next flicker in 5-10 seconds
+                setTimeout(flicker, Math.random() * 5000 + 5000);
+            }
+
+            // Start with initial delay
+            setTimeout(flicker, delay);
+        }
+
+        // Start all flicker effects with different delays
+        createFlicker(neonMax, 3000);
+        createFlicker(neonVersion, 2500);
+        createFlicker(neonDdc, 2000);
+    })();
+  </script>
 
   <!-- Image Modal -->
   <div id="imageModal" class="image-modal" onclick="closeImageModal()">
