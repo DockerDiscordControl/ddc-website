@@ -298,7 +298,7 @@ class ScreenshotCarousel {
     this.indicators[this.currentSlide].classList.add('active');
     
     const carouselSlides = document.getElementById('carouselSlides');
-    carouselSlides.style.transform = `translateX(-${this.currentSlide * 9.09}%)`;
+    carouselSlides.style.transform = `translateX(-${this.currentSlide * 6.25}%)`;
     
     this.updateFeatureCards();
   }

@@ -2008,11 +2008,11 @@ code {
 .carousel-slides {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    width: 1100%; /* 11 slides */
+    width: 1600%; /* 16 slides */
 }
 
 .carousel-slide {
-    width: 9.09%; /* 100% / 11 slides */
+    width: 6.25%; /* 100% / 16 slides */
     position: relative;
     flex-shrink: 0;
 }
@@ -2671,5 +2671,30 @@ code {
 .footer-section {
     padding-left: 0;
     padding-right: 0;
+}
+
+/* Mech Animation im Footer */
+.mech-animation {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 4px rgba(54, 207, 255, 0.4));
+}
+
+.artist-credit {
+    padding: 8px 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.artist-link {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.artist-link:hover {
+    color: #36cfff !important;
+    text-shadow: 0 0 8px rgba(54, 207, 255, 0.6);
 }
 
