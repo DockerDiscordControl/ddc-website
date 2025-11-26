@@ -2675,8 +2675,8 @@ code {
 
 /* Mech Animation im Footer */
 .mech-animation {
-    width: 56px;
-    height: 56px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     image-rendering: pixelated;
     filter: drop-shadow(0 0 4px rgba(54, 207, 255, 0.4));
