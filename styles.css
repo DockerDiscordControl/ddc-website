@@ -2679,7 +2679,6 @@ code {
     height: 201px;
     object-fit: contain;
     image-rendering: pixelated;
-    filter: drop-shadow(0 0 4px rgba(54, 207, 255, 0.4));
     display: block;
     margin: 0;
 }
