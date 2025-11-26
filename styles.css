@@ -2701,3 +2701,14 @@ code {
     text-shadow: 0 0 8px rgba(54, 207, 255, 0.6);
 }
 
+/* Email Link im Impressum */
+.email-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: var(--primary-color);
+}
+
