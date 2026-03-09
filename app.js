@@ -8,10 +8,10 @@ async function loadReadme() {
   try {
     readmeStatus.textContent = 'Loading...';
     readmeStatus.className = 'badge bg-warning';
-    
-    // Raw README direkt von GitHub laden (funktioniert mit GitHub Pages)
-    const response = await fetch('https://raw.githubusercontent.com/DockerDiscordControl/DockerDiscordControl/main/README.md');
-    
+
+    // README lokal laden (wird per GitHub Action synchronisiert)
+    const response = await fetch('README_DDC.md');
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -144,30 +144,29 @@ async function loadReadme() {
   } catch (error) {
     console.error('Error loading README:', error);
     
-    // Fallback: Versuche es mit einem Proxy-Service
+    // Fallback: Direkt von GitHub laden falls lokale Datei fehlt
     try {
       readmeStatus.textContent = 'Retrying...';
       readmeStatus.className = 'badge bg-info';
-      
-      const proxyResponse = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://raw.githubusercontent.com/DockerDiscordControl/DockerDiscordControl/main/README.md'));
-      
-      if (proxyResponse.ok) {
-        const proxyData = await proxyResponse.json();
-        const readmeText = proxyData.contents;
-        
+
+      const fallbackResponse = await fetch('https://raw.githubusercontent.com/DockerDiscordControl/DockerDiscordControl/main/README.md');
+
+      if (fallbackResponse.ok) {
+        const readmeText = await fallbackResponse.text();
+
         const htmlContent = marked.parse(readmeText, {
           breaks: true,
           gfm: true,
           sanitize: false
         });
-        
+
         readmeContent.innerHTML = htmlContent;
-        readmeStatus.textContent = 'Loaded (Proxy)';
+        readmeStatus.textContent = 'Loaded (GitHub)';
         readmeStatus.className = 'badge bg-success';
         return;
       }
-    } catch (proxyError) {
-      console.error('Proxy also failed:', proxyError);
+    } catch (fallbackError) {
+      console.error('GitHub fallback also failed:', fallbackError);
     }
     
     // Wenn alles fehlschlägt, zeige Fallback

@@ -1,0 +1,37 @@
+name: Sync README from DDC Main Repo
+
+on:
+  schedule:
+    # Täglich um 6:00 UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website repo
+        uses: actions/checkout@v4
+
+      - name: Fetch README from DDC main repo
+        run: |
+          curl -fsSL -o README_DDC.md \
+            "https://raw.githubusercontent.com/DockerDiscordControl/DockerDiscordControl/main/README.md"
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet README_DDC.md 2>/dev/null; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README_DDC.md
+          git commit -m "Sync README from DDC main repo"
+          git push
