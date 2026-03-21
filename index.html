@@ -720,8 +720,8 @@
         // Start inverted glow effect for version
         createGlow(neonVersion, 2500);
 
-        // Auto-fetch latest version from README badge
-        fetch('https://raw.githubusercontent.com/DockerDiscordControl/DockerDiscordControl/main/README.md')
+        // Auto-fetch latest version from synced README (README_DDC.md is synced hourly from main repo)
+        fetch('README_DDC.md')
           .then(function(r) { return r.text(); })
           .then(function(text) {
             var match = text.match(/Version-(v[\d.]+)-/);
