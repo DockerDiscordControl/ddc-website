@@ -719,6 +719,17 @@
 
         // Start inverted glow effect for version
         createGlow(neonVersion, 2500);
+
+        // Auto-fetch latest version from README badge
+        fetch('https://raw.githubusercontent.com/DockerDiscordControl/DockerDiscordControl/main/README.md')
+          .then(function(r) { return r.text(); })
+          .then(function(text) {
+            var match = text.match(/Version-(v[\d.]+)-/);
+            if (match && neonVersion) {
+              neonVersion.textContent = match[1];
+            }
+          })
+          .catch(function() {});
     })();
   </script>
 
