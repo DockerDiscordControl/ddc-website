@@ -724,7 +724,7 @@
         fetch('README_DDC.md')
           .then(function(r) { return r.text(); })
           .then(function(text) {
-            var match = text.match(/Version-(v[\d.]+)-/);
+            var match = text.match(/Version-v([\d.]+)-/);
             if (match && neonVersion) {
               neonVersion.textContent = match[1];
             }
